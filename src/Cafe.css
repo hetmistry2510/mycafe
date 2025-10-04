@@ -1,0 +1,351 @@
+/* === General Styles === */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #fff8f0;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #f8f5f5;
+}
+
+.section {
+    padding: 60px 20px;
+}
+
+.dark-section {
+    background: #472b18;
+    color: #fff8f0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ensure vertical alignment */
+    padding: 10px 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(44, 27, 15, 0.9);
+    color: #fff8f0;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+/* FIX: Hide the mobile toggle icon on desktop */
+.nav-toggle {
+    display: none;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0; /* Remove default ul margin */
+    padding: 0; /* Remove default ul padding */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff8f0;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #f4b467;
+}
+
+/* Hero */
+.hero-section {
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1350&q=80") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff8f0;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    /* FIX: changed h2 color for hero to white, since h2 general style sets it to #f8f5f5 (light gray) */
+    color: #fff8f0;
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero-content p {
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: #f4b467;
+    border: none;
+    color: #2c1b0f;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+    background: #d08a3e;
+    transform: scale(1.05);
+}
+
+/* About */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+}
+
+.about-content img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+}
+
+/* === Menu Section === */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.menu-card {
+    background: #fff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 320px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Staggered animation effect */
+.menu-card:nth-child(1) { animation-delay: 0.2s; }
+.menu-card:nth-child(2) { animation-delay: 0.4s; }
+.menu-card:nth-child(3) { animation-delay: 0.6s; }
+.menu-card:nth-child(4) { animation-delay: 0.8s; }
+.menu-card:nth-child(5) { animation-delay: 1s; }
+
+.menu-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.4s ease;
+}
+
+.menu-card p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #5c2c0c;
+    margin-top: auto;
+}
+
+/* Hover effects */
+.menu-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.menu-card:hover img {
+    transform: scale(1.08);
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+/* Forms */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.form input,
+.form textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+
+.form button {
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background: #1a0f08;
+    color: #fff8f0;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer a {
+    margin-left: 10px;
+    color: #f4b467;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.zoom-in {
+    animation: zoomIn 0.7s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Mobile Responsive === */
+/* Mobile Slide-In Sidebar */
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed; /* stay on top */
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #2c1b0f;
+        z-index: 1001; /* above everything */
+    }
+
+    /* FIX: SHOW the mobile toggle icon */
+    .nav-toggle {
+        display: flex;
+        font-size: 1.8rem;
+        color: #fff8f0;
+        cursor: pointer;
+        z-index: 1002; /* above sidebar */
+        margin-right: 20px; /* Adjusted margin */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -400px; /* hidden offscreen */
+        width: 250px;
+        height: 100vh;
+        background: rgba(44, 27, 15, 0.95);
+        flex-direction: column;
+        padding: 50px 20px; /* below navbar */
+        gap: 30px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        right: 0px; /* slide in */
+    }
+
+    .nav-links li {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Optional overlay behind sidebar */
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+        transition: opacity 0.3s ease;
+    }
+
+    .nav-overlay.active {
+        display: block;
+    }
+}
