@@ -299,7 +299,7 @@ h2 {
         color: #fff8f0;
         cursor: pointer;
         z-index: 1002; /* above sidebar */
-        margin-right: 20px; /* Adjusted margin */
+        margin-right: 30px; /* Adjusted margin */
     }
 
     .nav-links {
